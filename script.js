@@ -3,7 +3,8 @@ document.querySelector("button").addEventListener("click",async ()=>{
     try{
         const responce = await fetch(link)
         const data = await responce.json()
-        document.querySelector("img").src = data.message
+        document.querySelector("div").style.backgroundImage = "url(" + data.message + ")"
+        document.querySelector("a").href = data.message
     }
     catch(error){
         console.error(error)
