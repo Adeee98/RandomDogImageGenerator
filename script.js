@@ -1,12 +1,10 @@
-document.querySelector("button").addEventListener("click",async ()=>{
-    const link = `https://dog.ceo/api/breeds/image/random`
-    try{
-        const responce = await fetch(link)
-        const data = await responce.json()
-        document.querySelector("div").style.backgroundImage = "url(" + data.message + ")"
-        document.querySelector("a").href = data.message
-    }
-    catch(error){
-        console.error(error)
-    }
-})
+    document.querySelector("button").addEventListener("click",async ()=>{
+        const link = `https://api.thecatapi.com/v1/images/search`
+
+            const responce = await fetch(link)
+            console.log(responce)
+            const data = await responce.json()
+            console.log(data)
+
+            document.querySelector("img").src = data[0].url
+    })
